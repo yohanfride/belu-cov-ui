@@ -2508,6 +2508,14 @@ section {
   background: #f8f8f8 !important;
 }
 
+.bg-yellow-darken-2{
+  color : #fff !important;
+  background: #fdd835   !important;
+}
+
+.text-yellow-darken-2{
+  color : #fdd835   !important;
+}
 
 .maps-box {
   margin-bottom: 20px;
@@ -2535,7 +2543,7 @@ span.info-peta-odr {
     width: 15px;
     border-radius: 50%;
     display: inline-block;
-    background-color: #ffa000;
+    background-color: #42a5f5;
 }
 
 span.info-peta-odp {
@@ -2543,7 +2551,7 @@ span.info-peta-odp {
     width: 15px;
     border-radius: 50%;
     display: inline-block;
-    background-color: #42a5f5;
+    background-color: #fdd835;
 }
 
 span.info-peta-pdp {
@@ -2551,7 +2559,7 @@ span.info-peta-pdp {
     width: 15px;
     border-radius: 50%;
     display: inline-block;
-    background-color: #8e24aa;
+    background-color: #ffa000;
 }
 
 span.info-peta-positif {

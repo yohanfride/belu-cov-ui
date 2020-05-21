@@ -121,16 +121,16 @@
           
           <div class="col-lg-6 col-md-6 aos-init aos-animate mb-md-2" data-aos="fade-up" data-aos-delay="200">
             <div class="box ">
-              <h3 class="bg-amber-darken-2">Orang Dalam Resiko (ODR)</h3>
-              <h4 class="count text-amber-darken-2"><?= $current->odr->total; ?></h4>
+              <h3 class="bg-blue-lighten-1">Orang Dalam Resiko (ODR)</h3>
+              <h4 class="count text-blue-lighten-1"><?= $current->odr->total; ?></h4>
               <h6 class="font-weight-light">Total ODR</h6>
               <div class="row">
                 <div class="col-lg-6 col-md-6 mt-4">
-                    <h5 class="count text-amber-darken-2"><?= $current->odr->dipantau; ?></h5>
+                    <h5 class="count text-blue-lighten-1"><?= $current->odr->dipantau; ?></h5>
                     <h6 class="sub-count font-weight-light">Proses Pemantauan</h6>
                 </div>
                 <div class="col-lg-6 col-md-6 mt-4">
-                    <h5 class="count text-amber-darken-2"><?= $current->odr->{'selesai-dipantau'}; ?></h5>
+                    <h5 class="count text-blue-lighten-1"><?= $current->odr->{'selesai-dipantau'}; ?></h5>
                     <h6 class="sub-count font-weight-light">Selesai Pemantauan</h6>
                 </div>
               </div>
@@ -142,20 +142,20 @@
 
           <div class="col-lg-6 col-md-6 aos-init aos-animate mb-md-2" data-aos="fade-up" data-aos-delay="200">
             <div class="box ">
-              <h3 class="bg-blue-lighten-1">Orang Dalam Pemantauan (ODP)</h3>
-              <h4 class="count text-blue-lighten-1"><?= $current->odp->total; ?></h4>
+              <h3 class="bg-yellow-darken-2">Orang Dalam Pemantauan (ODP)</h3>
+              <h4 class="count text-yellow-darken-2  "><?= $current->odp->total; ?></h4>
               <h6 class="font-weight-light">Total ODP</h6>
               <div class="row">
                 <div class="col-lg-4 col-md-6 mt-4">
-                    <h5 class="count text-blue-lighten-1"><?= $current->odp->dipantau; ?></h5>
+                    <h5 class="count text-yellow-darken-2"><?= $current->odp->dipantau; ?></h5>
                     <h6 class="sub-count font-weight-light">Proses Pemantauan</h6>
                 </div>
                 <div class="col-lg-4 col-md-6 mt-4">
-                    <h5 class="count text-blue-lighten-1"><?= $current->odp->{'selesai-dipantau'}; ?></h5>
+                    <h5 class="count text-yellow-darken-2"><?= $current->odp->{'selesai-dipantau'}; ?></h5>
                     <h6 class="sub-count font-weight-light">Selesai Pemantauan</h6>
                 </div>
                 <div class="col-lg-4 col-md-6 mt-4">
-                    <h5 class="count text-blue-lighten-1"><?= $current->odp->meninggal; ?></h5>
+                    <h5 class="count text-yellow-darken-2"><?= $current->odp->meninggal; ?></h5>
                     <h6 class="sub-count font-weight-light">Meninggal</h6>
                 </div>
               </div>
@@ -167,20 +167,20 @@
 
           <div class="col-lg-6 col-md-6 aos-init aos-animate mb-md-2" data-aos="fade-up" data-aos-delay="200">
             <div class="box ">
-              <h3 class="bg-purple-darken-1">Pasien Dalam Pengawasan (PDP)</h3>
-              <h4 class="count text-purple-darken-1"><?= $current->pdp->total; ?></h4>
+              <h3 class="bg-amber-darken-2">Pasien Dalam Pengawasan (PDP)</h3>
+              <h4 class="count text-amber-darken-2"><?= $current->pdp->total; ?></h4>
               <h6 class="font-weight-light">Total PDP</h6>
               <div class="row">
                 <div class="col-lg-4 col-md-6 mt-4">
-                    <h5 class="count text-purple-darken-1"><?= $current->pdp->dirawat; ?></h5>
+                    <h5 class="count text-amber-darken-2"><?= $current->pdp->dirawat; ?></h5>
                     <h6 class="sub-count font-weight-light">Masih Dirawat</h6>
                 </div>
                 <div class="col-lg-4 col-md-6 mt-4">
-                    <h5 class="count text-purple-darken-1"><?= $current->pdp->sembuh; ?></h5>
+                    <h5 class="count text-amber-darken-2"><?= $current->pdp->sembuh; ?></h5>
                     <h6 class="sub-count font-weight-light">Sembuh</h6>
                 </div>
                 <div class="col-lg-4 col-md-6 mt-4">
-                    <h5 class="count text-purple-darken-1"><?= $current->pdp->meninggal; ?></h5>
+                    <h5 class="count text-amber-darken-2"><?= $current->pdp->meninggal; ?></h5>
                     <h6 class="sub-count font-weight-light">Meninggal</h6>
                 </div>
               </div>
@@ -269,7 +269,7 @@
 
           <div class="col-lg-6 col-md-6 aos-init aos-animate mb-md-2" data-aos="fade-up" data-aos-delay="200">
             <div class="box ">
-              <h3 class=".bg-gray text-amber-darken-2">Trend Grafik Orang Dalam Resiko (ODR)</h3>
+              <h3 class=".bg-gray text-blue-lighten-1">Trend Grafik Orang Dalam Resiko (ODR)</h3>
               <div class="row">
                 <div  id="chart-kasus-odr" class="chart-canvas"></div >  
               </div>
@@ -278,7 +278,7 @@
 
           <div class="col-lg-6 col-md-6 aos-init aos-animate mb-md-2" data-aos="fade-up" data-aos-delay="200">
             <div class="box ">
-              <h3 class=".bg-gray text-blue-lighten-1">Trend Grafik Orang Dalam Pemantauan (ODP)</h3>
+              <h3 class=".bg-gray text-yellow-darken-2">Trend Grafik Orang Dalam Pemantauan (ODP)</h3>
               <div class="row">
                 <div id="chart-kasus-odp" class="chart-canvas"></div >  
               </div>
@@ -287,7 +287,7 @@
 
           <div class="col-lg-6 col-md-6 aos-init aos-animate mb-md-2" data-aos="fade-up" data-aos-delay="200">
             <div class="box ">
-              <h3 class=".bg-gray text-purple-darken-1">Trend Grafik Pasien Dalam Pengawasan (PDP)</h3>
+              <h3 class=".bg-gray text-amber-darken-2">Trend Grafik Pasien Dalam Pengawasan (PDP)</h3>
               <div class="row">
                 <div  id="chart-kasus-pdp" class="chart-canvas"></div >  
               </div>
@@ -611,11 +611,11 @@
           if( fitur.confirm > 0){
             color = '#ef5350';
           } else if( fitur.pdp > 0){
-            color = '#8e24aa';
+            color = '#ff8f00';
           } else if( fitur.odp > 0){
-            color = '#42a5f5';
+            color = '#ffeb3b';
           } else if( fitur.odr > 0){
-            color = '#ffa000';
+            color = '#42a5f5';
           } else {
             color = '#4caf50';
           }
@@ -628,9 +628,9 @@
       // End Maps ///
 
       var chartColors ={
-        orange:"#ffa000",
-        blue:"#42a5f5",
-        purple:"#8e24aa",
+        orange:"#42a5f5",
+        blue:"#fdd835",
+        purple:"#ffa000",
         red:"#ef5350",
       }
       <?php  
@@ -943,10 +943,10 @@
               type: 'line',
               stacked: false,
           },
-          colors: [chartColors.blue, '#35FD0B', '#f2f700', '#000000'],
+          colors: [chartColors.blue, '#35FD0B', '#2303c2', '#000000'],
           stroke: {
               width: [0, 5, 5, 5],
-              colors: ['#000000', '#2Cff00', '#04A7FF'],
+              colors: ['#000000', '#2303c2', '#04A7FF'],
               curve: 'smooth',
               // colors:['']
           },
@@ -957,7 +957,7 @@
           },
 
           fill: {
-              colors: [chartColors.blue, '#35FD0B', '#f2f700', '#000000'],
+              colors: [chartColors.blue, '#35FD0B', '#2303c2', '#000000'],
               opacity: [0.85, 0.25, 1],
               gradient: {
                   inverseColors: false,
@@ -996,7 +996,7 @@
                   height: 12,
                   strokeWidth: 0,
                   strokeColor: '#fff',
-                  fillColors: [chartColors.blue, '#35FD0B', '#f2f700', '#000000'],
+                  fillColors: [chartColors.blue, '#35FD0B', '#2303c2', '#000000'],
                   radius: 12,
                   customHTML: undefined,
                   onClick: undefined,
@@ -1074,7 +1074,7 @@
               type: 'line',
               stacked: false,
           },
-          colors: [chartColors.purple, '#35FD0B', '#f2f700', '#000000'],
+          colors: [chartColors.purple, '#35FD0B', '#2303c2', '#000000'],
           stroke: {
               width: [0, 5, 5, 5],
               colors: ['#000000', '#2Cff00', '#04A7FF'],
@@ -1088,7 +1088,7 @@
           },
 
           fill: {
-              colors: [chartColors.purple, '#35FD0B', '#f2f700', '#000000'],
+              colors: [chartColors.purple, '#35FD0B', '#2303c2', '#000000'],
               opacity: [0.85, 0.25, 1],
               gradient: {
                   inverseColors: false,
@@ -1127,7 +1127,7 @@
                   height: 12,
                   strokeWidth: 0,
                   strokeColor: '#fff',
-                  fillColors: [chartColors.purple, '#35FD0B', '#f2f700', '#000000'],
+                  fillColors: [chartColors.purple, '#35FD0B', '#2303c2', '#000000'],
                   radius: 12,
                   customHTML: undefined,
                   onClick: undefined,
@@ -1209,7 +1209,7 @@
               type: 'line',
               stacked: false,
           },
-          colors: [chartColors.red, '#35FD0B', '#04a7ff', '#000000', '#f2f700'],
+          colors: [chartColors.red, '#35FD0B', '#2303c2', '#000000', '#f2f700'],
           stroke: {
               width: [0, 5, 5, 5],
               colors: ['#000000', '#2Cff00', '#04A7FF'],
@@ -1223,7 +1223,7 @@
           },
 
           fill: {
-              colors: [chartColors.red, '#35FD0B', '#04a7ff', '#000000', '#f2f700'],
+              colors: [chartColors.red, '#35FD0B', '#2303c2', '#000000', '#f2f700'],
               opacity: [0.85, 0.25, 1],
               gradient: {
                   inverseColors: false,
@@ -1262,7 +1262,7 @@
                   height: 12,
                   strokeWidth: 0,
                   strokeColor: '#fff',
-                  fillColors: [chartColors.red, '#35FD0B', '#04a7ff', '#000000', '#f2f700'],
+                  fillColors: [chartColors.red, '#35FD0B', '#2303c2', '#000000', '#f2f700'],
                   radius: 12,
                   customHTML: undefined,
                   onClick: undefined,
