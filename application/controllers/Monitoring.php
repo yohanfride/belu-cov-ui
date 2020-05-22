@@ -60,7 +60,7 @@ class Monitoring extends CI_Controller {
 				$data['kecamatan'] = json_decode($json,true);
 				$data['user_now'] = $this->session->userdata('covid-gugustugas');
 				if($data['user_now']->level == 'pusat'){
-					$data['kec'] = $data['kecamatan']['kecamatan'][0];
+					$data['kec'] = $data['kecamatan']['Kecamatan'][0];
 				} else {
 					$data['kec'] = $data['user_now']->level;
 				}

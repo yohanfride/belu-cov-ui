@@ -441,10 +441,11 @@
          immediately after the control sidebar -->
 
 <!--/#app -->
+
+<script src="<?= base_url();?>assets/js/app.js"></script>
 <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.css" />
 <script src="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.js"></script>
 
-<script src="<?= base_url();?>assets/js/app.js"></script>
 
 <script type="text/javascript">
     var map,marker,geocodeService;

@@ -394,6 +394,7 @@
                 $("#search-card").html(result);
             }
           });
+          return false;
         });
     });
 
