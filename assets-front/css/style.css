@@ -2517,6 +2517,26 @@ section {
   color : #fdd835   !important;
 }
 
+
+.bg-light-blue-darken-4{
+  color : #fff !important;
+  background: #01579b   !important;
+}
+
+.text-light-blue-darken-4{
+  color : #01579b    !important;
+}
+
+.bg-red-darken-4{
+  color : #fff !important;
+  background: #b71c1c   !important;
+}
+
+.text-red-darken-4{
+  color : #b71c1c    !important;
+}
+
+
 .maps-box {
   margin-bottom: 20px;
   padding: 10px;

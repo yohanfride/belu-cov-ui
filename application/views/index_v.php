@@ -217,7 +217,59 @@
               </div>
             </div>
           </div>  
+
+          <div class="col-lg-6 col-md-6 aos-init aos-animate mb-md-2" data-aos="fade-up" data-aos-delay="200" style="display: none;" id="data-global"> 
+            <div class="box ">
+              <h3 class="bg-light-blue-darken-4">Positif Covid-19 Jawa Timur</h3>
+              <h4 class="count text-light-blue-darken-4" id="jatim-positif">0</h4>
+              <h6 class="font-weight-light">Total Positif</h6>
+              <div class="row">
+                 <div class="col-lg-4 col-md-6 mt-4">
+                    <h5 class="count text-light-blue-darken-4" id="jatim-dirawat">0</h5>
+                    <h6 class="sub-count font-weight-light">Masih Dirawat</h6>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-4">
+                    <h5 class="count text-light-blue-darken-4" id="jatim-sembuh">0</h5>
+                    <h6 class="sub-count font-weight-light">Sembuh</h6>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-4">
+                    <h5 class="count text-light-blue-darken-4" id="jatim-meninggal">0</h5>
+                    <h6 class="sub-count font-weight-light">Meninggal</h6>
+                </div>
+              </div>
+              <div class="btn-wrap">
+                <span  class="btn-buy">Sumber: <a style="color: #fff"; href="https://kawalcorona.com/" target="__blank">kawalcorona.com</a></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6 aos-init aos-animate mb-md-2" data-aos="fade-up" data-aos-delay="200" style="display: none;" id="data-jatim">
+            <div class="box ">
+              <h3 class="bg-red-darken-4">Positif Covid-19 Indonesia</h3>
+              <h4 class="count text-red-darken-4" id="indo-positif">0</h4>
+              <h6 class="font-weight-light">Total Positif</h6>
+              <div class="row">
+                 <div class="col-lg-4 col-md-6 mt-4">
+                    <h5 class="count text-red-darken-4" id="indo-dirawat">0</h5>
+                    <h6 class="sub-count font-weight-light">Masih Dirawat</h6>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-4">
+                    <h5 class="count text-red-darken-4" id="indo-sembuh">0</h5>
+                    <h6 class="sub-count font-weight-light">Sembuh</h6>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-4">
+                    <h5 class="count text-red-darken-4" id="indo-meninggal">0</h5>
+                    <h6 class="sub-count font-weight-light">Meninggal</h6>
+                </div>
+              </div>
+              <div class="btn-wrap">
+                <span  class="btn-buy">Sumber: <a style="color: #fff" href="https://kawalcorona.com/" target="__blank">kawalcorona.com</a></span>
+              </div>
+            </div>
+          </div>
+
         </div>
+
       </div>
     </section><!-- End Data Pemantauan Section -->
 
@@ -532,6 +584,27 @@
 
   <script type="text/javascript">
     jQuery(function($){
+      ///Global Data////
+      var getNational=$.getJSON("<?= base_url()?>home/getNasional", function (data) {
+        if(data){
+          $("#indo-positif").html(data.position);
+          $("#indo-sembuh").html(data.sembuh);
+          $("#indo-meninggal").html(data.meninggal);  
+          $("#indo-dirawat").html(data.dirawat);  
+          $("#data-global").attr("style", "");
+        }
+      });
+      var getJatim=$.getJSON("<?= base_url()?>home/getJatim", function (data) {
+        if(data){
+          $("#jatim-positif").html(data.Kasus_Posi);
+          $("#jatim-sembuh").html(data.Kasus_Semb);
+          $("#jatim-meninggal").html(data.Kasus_Meni);  
+          $("#jatim-dirawat").html(data.Kasus_Posi - data.Kasus_Semb - data.Kasus_Meni);  
+          $("#data-jatim").attr("style", "");
+        }
+      });
+
+      //var maps = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', { 
       // Maps ///
       var maps = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', { 
             attribution: 'Data © <a href="http://sampangkab.go.id">SIM PUPR Kabupaten sampang</a>',
@@ -1438,6 +1511,8 @@
         }
       });
       ///End Faskes Maps
+
+
     });
   </script>
 

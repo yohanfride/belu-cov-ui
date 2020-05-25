@@ -68,6 +68,30 @@ class Home extends CI_Controller {
     	echo json_encode( $res );
 	}
 
+	public function getNasional (){
+		$json_url = 'https://api.kawalcorona.com/indonesia/';
+		$json = file_get_contents($json_url);
+		$obj = json_decode($json);
+		header('Content-Type: application/json');
+		if($obj[0])
+			echo json_encode( $obj[0] );
+	}
+
+	public function getJatim (){
+		$json_url = 'https://api.kawalcorona.com/indonesia/provinsi/';
+		$json = file_get_contents($json_url);
+		$obj = json_decode($json);
+		$red = array();
+		foreach ($obj as $key => $value) {
+			if($value->attributes->Provinsi == "Jawa Timur"){
+				$res = $value->attributes;
+				break;
+			}
+		}
+		header('Content-Type: application/json');
+		echo json_encode( $res );
+	}
+
 }
 
 /* End of file  */
