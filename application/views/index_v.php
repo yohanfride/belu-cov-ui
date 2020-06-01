@@ -587,7 +587,7 @@
       ///Global Data////
       var getNational=$.getJSON("<?= base_url()?>home/getNasional", function (data) {
         if(data){
-          $("#indo-positif").html(data.position);
+          $("#indo-positif").html(data.positif);
           $("#indo-sembuh").html(data.sembuh);
           $("#indo-meninggal").html(data.meninggal);  
           $("#indo-dirawat").html(data.dirawat);  
