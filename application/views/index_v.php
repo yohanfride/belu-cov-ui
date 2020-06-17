@@ -220,7 +220,7 @@
 
           <div class="col-lg-6 col-md-6 aos-init aos-animate mb-md-2" data-aos="fade-up" data-aos-delay="200" style="display: none;" id="data-global"> 
             <div class="box ">
-              <h3 class="bg-light-blue-darken-4">Positif Covid-19 Jawa Timur</h3>
+              <h3 class="bg-red-darken-4">Positif Covid-19 Jawa Timur</h3>
               <h4 class="count text-light-blue-darken-4" id="jatim-positif">0</h4>
               <h6 class="font-weight-light">Total Positif</h6>
               <div class="row">
