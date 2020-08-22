@@ -289,15 +289,29 @@
                                         <div class="form-group">
                                             <label for="inputName" class="col-form-label">Kondisi</label>
                                             <select  class="form-control" name="level" id="level" required disabled >
-                                                <option value="confirm" <?= (strtoupper($data->level) == "CONFIRM")?"selected":""; ?> >Confirm</option>
-                                                <option value="pdp" <?= (strtoupper($data->level) == "PDP")?"selected":""; ?> >PDP (Pasien Dalam Perawatan)</option>
-                                                <option value="odp" <?= (strtoupper($data->level) == "ODP")?"selected":""; ?> >ODP (Orang Dalam Pengawasan)</option>
+                                                <option value="konfirmasi" <?= (strtoupper($data->level) == "KONFIRMASI")?"selected":""; ?> >Konfirmasi</option>
+                                                <option value="suspek" <?= (strtoupper($data->level) == "SUSPEK")?"selected":""; ?> >Suspek</option>
+                                                <option value="probable" <?= (strtoupper($data->level) == "PROBABLE")?"selected":""; ?> >Probable</option>
+                                                <option value="kontak_erat" <?= (strtoupper($data->level) == "KONTAK_ERAT")?"selected":""; ?> >Kontak Erat</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputPhone" class="col-form-label">Status</label>
                                             <input type="text" class="form-control" id="level_status" name="level_status"  value="<?= $data->level_status?>" required disabled>
                                         </div>
+                                        <?php
+                                        if(strtoupper($data->level) == "KONFIRMASI"){ 
+                                            if(isset($data->konfirmasi_gejala)){
+                                                $konfirmasi_gejala = $data->konfirmasi_gejala;
+                                            } else {
+                                                $konfirmasi_gejala = '-';
+                                            }
+                                        ?>
+                                        <div class="form-group" id="form_gejala">
+                                            <label for="inputName" class="col-form-label">Status Konfirmasi</label>
+                                            <input type="text" class="form-control" id="gejala" name="gejala"  value="<?= $konfirmasi_gejala; ?>" required disabled>
+                                        </div>
+                                        <?php } ?>
                                         <div class="form-group">
                                             <label for="inputPhone" class="col-form-label">Tanggal Lahir</label>
                                             <div class="input-group focused">

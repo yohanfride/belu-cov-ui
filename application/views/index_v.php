@@ -121,16 +121,16 @@
           
           <div class="col-lg-6 col-md-6 aos-init aos-animate mb-md-2" data-aos="fade-up" data-aos-delay="200">
             <div class="box ">
-              <h3 class="bg-blue-lighten-1">Orang Dalam Resiko (ODR)</h3>
-              <h4 class="count text-blue-lighten-1"><?= $current->odr->total; ?></h4>
-              <h6 class="font-weight-light">Total ODR</h6>
+              <h3 class="bg-blue-lighten-1">Kontak Erat</h3>
+              <h4 class="count text-blue-lighten-1"><?= $current->kontak_erat->total; ?></h4>
+              <h6 class="font-weight-light">Total Kasus</h6>
               <div class="row">
                 <div class="col-lg-6 col-md-6 mt-4">
-                    <h5 class="count text-blue-lighten-1"><?= $current->odr->dipantau; ?></h5>
+                    <h5 class="count text-blue-lighten-1"><?= $current->kontak_erat->dipantau; ?></h5>
                     <h6 class="sub-count font-weight-light">Proses Pemantauan</h6>
                 </div>
                 <div class="col-lg-6 col-md-6 mt-4">
-                    <h5 class="count text-blue-lighten-1"><?= $current->odr->{'selesai-dipantau'}; ?></h5>
+                    <h5 class="count text-blue-lighten-1"><?= $current->kontak_erat->{'selesai-dipantau'}; ?></h5>
                     <h6 class="sub-count font-weight-light">Selesai Pemantauan</h6>
                 </div>
               </div>
@@ -142,20 +142,20 @@
 
           <div class="col-lg-6 col-md-6 aos-init aos-animate mb-md-2" data-aos="fade-up" data-aos-delay="200">
             <div class="box ">
-              <h3 class="bg-yellow-darken-2">Orang Dalam Pemantauan (ODP)</h3>
-              <h4 class="count text-yellow-darken-2  "><?= $current->odp->total; ?></h4>
-              <h6 class="font-weight-light">Total ODP</h6>
+              <h3 class="bg-yellow-darken-2">Probable</h3>
+              <h4 class="count text-yellow-darken-2  "><?= $current->probable->total; ?></h4>
+              <h6 class="font-weight-light">Total Kasus</h6>
               <div class="row">
                 <div class="col-lg-4 col-md-6 mt-4">
-                    <h5 class="count text-yellow-darken-2"><?= $current->odp->dipantau; ?></h5>
-                    <h6 class="sub-count font-weight-light">Proses Pemantauan</h6>
+                    <h5 class="count text-yellow-darken-2"><?= $current->probable->isolasi; ?></h5>
+                    <h6 class="sub-count font-weight-light">Isolasi</h6>
                 </div>
                 <div class="col-lg-4 col-md-6 mt-4">
-                    <h5 class="count text-yellow-darken-2"><?= $current->odp->{'selesai-dipantau'}; ?></h5>
-                    <h6 class="sub-count font-weight-light">Selesai Pemantauan</h6>
+                    <h5 class="count text-yellow-darken-2"><?= $current->probable->{"selesai-isolasi"}; ?></h5>
+                    <h6 class="sub-count font-weight-light">Selesai Isolasi</h6>
                 </div>
                 <div class="col-lg-4 col-md-6 mt-4">
-                    <h5 class="count text-yellow-darken-2"><?= $current->odp->meninggal; ?></h5>
+                    <h5 class="count text-yellow-darken-2"><?= $current->probable->meninggal; ?></h5>
                     <h6 class="sub-count font-weight-light">Meninggal</h6>
                 </div>
               </div>
@@ -167,20 +167,20 @@
 
           <div class="col-lg-6 col-md-6 aos-init aos-animate mb-md-2" data-aos="fade-up" data-aos-delay="200">
             <div class="box ">
-              <h3 class="bg-amber-darken-2">Pasien Dalam Pengawasan (PDP)</h3>
-              <h4 class="count text-amber-darken-2"><?= $current->pdp->total; ?></h4>
-              <h6 class="font-weight-light">Total PDP</h6>
+              <h3 class="bg-amber-darken-2">Suspek</h3>
+              <h4 class="count text-amber-darken-2"><?= $current->suspek->total; ?></h4>
+              <h6 class="font-weight-light">Total Kasus</h6>
               <div class="row">
                 <div class="col-lg-4 col-md-6 mt-4">
-                    <h5 class="count text-amber-darken-2"><?= $current->pdp->dirawat; ?></h5>
-                    <h6 class="sub-count font-weight-light">Masih Dirawat</h6>
+                    <h5 class="count text-amber-darken-2"><?= $current->suspek->isolasi; ?></h5>
+                    <h6 class="sub-count font-weight-light">Masih isolasi</h6>
                 </div>
                 <div class="col-lg-4 col-md-6 mt-4">
-                    <h5 class="count text-amber-darken-2"><?= $current->pdp->sembuh; ?></h5>
+                    <h5 class="count text-amber-darken-2"><?= $current->suspek->{"selesai-isolasi"}; ?></h5>
                     <h6 class="sub-count font-weight-light">Sembuh</h6>
                 </div>
                 <div class="col-lg-4 col-md-6 mt-4">
-                    <h5 class="count text-amber-darken-2"><?= $current->pdp->meninggal; ?></h5>
+                    <h5 class="count text-amber-darken-2"><?= $current->suspek->meninggal; ?></h5>
                     <h6 class="sub-count font-weight-light">Meninggal</h6>
                 </div>
               </div>
@@ -192,24 +192,32 @@
           <div class="col-lg-6 col-md-6 aos-init aos-animate mb-md-2" data-aos="fade-up" data-aos-delay="200">
             <div class="box ">
               <h3 class="bg-red-lighten-1">Terkonfimasi Positif Covid-19</h3>
-              <h4 class="count text-red-lighten-1"><?= $current->confirm->total; ?></h4>
+              <h4 class="count text-red-lighten-1"><?= $current->konfirmasi->total; ?></h4>
               <h6 class="font-weight-light">Total Positif</h6>
               <div class="row">
-                 <div class="col-lg-3 col-md-6 mt-4">
-                    <h5 class="count text-red-lighten-1"><?= $current->confirm->dirawat; ?></h5>
-                    <h6 class="sub-count font-weight-light">Masih Dirawat</h6>
+                <div class="col-lg-3 col-md-6 mt-4">
+                    <h5 class="count text-red-lighten-1"><?= $current->konfirmasi->dirawat; ?></h5>
+                    <h6 class="sub-count font-weight-light">Dalam Perawatan</h6>
                 </div>
                 <div class="col-lg-3 col-md-6 mt-4">
-                    <h5 class="count text-red-lighten-1"><?= $current->confirm->pengawasan; ?></h5>
-                    <h6 class="sub-count font-weight-light">Pengawasan</h6>
+                    <h5 class="count text-red-lighten-1"><?= $current->konfirmasi->pengawasan; ?></h5>
+                    <h6 class="sub-count font-weight-light">Dalam Pengawasan</h6>
                 </div>
                 <div class="col-lg-3 col-md-6 mt-4">
-                    <h5 class="count text-red-lighten-1"><?= $current->confirm->sembuh; ?></h5>
+                    <h5 class="count text-red-lighten-1"><?= $current->konfirmasi->sembuh; ?></h5>
                     <h6 class="sub-count font-weight-light">Sembuh</h6>
                 </div>
                 <div class="col-lg-3 col-md-6 mt-4">
-                    <h5 class="count text-red-lighten-1"><?= $current->confirm->meninggal; ?></h5>
+                    <h5 class="count text-red-lighten-1"><?= $current->konfirmasi->meninggal; ?></h5>
                     <h6 class="sub-count font-weight-light">Meninggal</h6>
+                </div>
+                <div class="col-lg-6 col-md-6 mt-4">
+                    <h5 class="count text-red-lighten-1"><?= $current->konfirmasi->{"dengan-gejala"}; ?></h5>
+                    <h6 class="sub-count font-weight-light">Kasus Dengan Gejala</h6>
+                </div>
+                <div class="col-lg-6 col-md-6 mt-4">
+                    <h5 class="count text-red-lighten-1"><?= $current->konfirmasi->{"tanpa-gejala"}; ?></h5>
+                    <h6 class="sub-count font-weight-light">Kasus Tanpa Gejala</h6>
                 </div>
               </div>
               <div class="btn-wrap">
@@ -225,8 +233,8 @@
               <h6 class="font-weight-light">Total Positif</h6>
               <div class="row">
                  <div class="col-lg-4 col-md-6 mt-4">
-                    <h5 class="count text-light-blue-darken-4" id="jatim-dirawat">0</h5>
-                    <h6 class="sub-count font-weight-light">Masih Dirawat</h6>
+                    <h5 class="count text-light-blue-darken-4" id="jatim-isolasi">0</h5>
+                    <h6 class="sub-count font-weight-light">Masih isolasi</h6>
                 </div>
                 <div class="col-lg-4 col-md-6 mt-4">
                     <h5 class="count text-light-blue-darken-4" id="jatim-sembuh">0</h5>
@@ -250,8 +258,8 @@
               <h6 class="font-weight-light">Total Positif</h6>
               <div class="row">
                  <div class="col-lg-4 col-md-6 mt-4">
-                    <h5 class="count text-red-darken-4" id="indo-dirawat">0</h5>
-                    <h6 class="sub-count font-weight-light">Masih Dirawat</h6>
+                    <h5 class="count text-red-darken-4" id="indo-isolasi">0</h5>
+                    <h6 class="sub-count font-weight-light">Masih isolasi</h6>
                 </div>
                 <div class="col-lg-4 col-md-6 mt-4">
                     <h5 class="count text-red-darken-4" id="indo-sembuh">0</h5>
@@ -282,10 +290,10 @@
         <div class="row" bis_skin_checked="1">
           <div class="info-peta" bis_skin_checked="1">
               <span class="info-peta-zonk"></span> Tidak Ada Kasus &nbsp;&nbsp;
-              <span class="info-peta-odr"></span> Ada ODR &nbsp;&nbsp;
-              <span class="info-peta-odp"></span> Ada ODP &nbsp;&nbsp;
-              <span class="info-peta-pdp"></span> Ada PDP &nbsp;&nbsp;
-              <span class="info-peta-positif"></span> Ada Positif Covid-19
+              <span class="info-peta-odr"></span> Ada Kasus Kontak Erat &nbsp;&nbsp;
+              <span class="info-peta-odp"></span> Ada Kasus Probable &nbsp;&nbsp;
+              <span class="info-peta-pdp"></span> Ada Kasus Suspek &nbsp;&nbsp;
+              <span class="info-peta-positif"></span> Ada Kasus Positif Covid-19
           </div>
           <div bis_skin_checked="1"></div>
         </div>
@@ -321,27 +329,27 @@
 
           <div class="col-lg-6 col-md-6 aos-init aos-animate mb-md-2" data-aos="fade-up" data-aos-delay="200">
             <div class="box ">
-              <h3 class=".bg-gray text-blue-lighten-1">Trend Grafik Orang Dalam Resiko (ODR)</h3>
+              <h3 class=".bg-gray text-blue-lighten-1">Trend Grafik Kontak Erat</h3>
               <div class="row">
-                <div  id="chart-kasus-odr" class="chart-canvas"></div >  
+                <div  id="chart-kasus-kontak_erat" class="chart-canvas"></div >  
               </div>
             </div>
           </div>
 
           <div class="col-lg-6 col-md-6 aos-init aos-animate mb-md-2" data-aos="fade-up" data-aos-delay="200">
             <div class="box ">
-              <h3 class=".bg-gray text-yellow-darken-2">Trend Grafik Orang Dalam Pemantauan (ODP)</h3>
+              <h3 class=".bg-gray text-yellow-darken-2">Trend Grafik Probable</h3>
               <div class="row">
-                <div id="chart-kasus-odp" class="chart-canvas"></div >  
+                <div id="chart-kasus-probable" class="chart-canvas"></div >  
               </div>
             </div>
           </div>
 
           <div class="col-lg-6 col-md-6 aos-init aos-animate mb-md-2" data-aos="fade-up" data-aos-delay="200">
             <div class="box ">
-              <h3 class=".bg-gray text-amber-darken-2">Trend Grafik Pasien Dalam Pengawasan (PDP)</h3>
+              <h3 class=".bg-gray text-amber-darken-2">Trend Grafik Suspek</h3>
               <div class="row">
-                <div  id="chart-kasus-pdp" class="chart-canvas"></div >  
+                <div  id="chart-kasus-suspek" class="chart-canvas"></div >  
               </div>
             </div>
           </div>
@@ -386,10 +394,12 @@
                             <tr>
                               <th style="text-align:center">No</th>
                               <th >Kecamatan</th>
-                              <th style="text-align:center">ODR</th>
-                              <th style="text-align:center">ODP</th>
-                              <th style="text-align:center">PDP</th>
-                              <th style="text-align:center">Positif</th>
+                              <th style="text-align:center">Kontak Erat</th>
+                              <th style="text-align:center">Probable</th>
+                              <th style="text-align:center">Suspek</th>
+                              <th style="text-align:center">Konfirmasi Positif</th>
+                              <th style="text-align:center">Konfirmasi Dengan Gejala</th>
+                              <th style="text-align:center">Konfirmasi Tanpa Gejala</th>
                               <th style="text-align:center">Total</th>
                             </tr>
                           </thead>
@@ -398,10 +408,12 @@
                             <tr>
                               <td style="text-align:center"><?= $no;?></td>
                               <td><?= $kec ?></td>
-                              <td style="text-align:center"> <?= $kecdata->odr ?> </td>
-                              <td style="text-align:center"> <?= $kecdata->odp ?></td>
-                              <td style="text-align:center"> <?= $kecdata->pdp ?></td>
-                              <td style="text-align:center"> <?= $kecdata->confirm ?></td>
+                              <td style="text-align:center"> <?= $kecdata->kontak_erat ?> </td>
+                              <td style="text-align:center"> <?= $kecdata->probable ?></td>
+                              <td style="text-align:center"> <?= $kecdata->suspek ?></td>
+                              <td style="text-align:center"> <?= $kecdata->konfirmasi ?></td>
+                              <td style="text-align:center"> <?= $kecdata->{"konfirmasi-dengan-gejala"} ?></td>
+                              <td style="text-align:center"> <?= $kecdata->{"konfirmasi-tanpa-gejala"} ?></td>
                               <td style="text-align:center"> <?= $kecdata->total ?></td>
                             </tr>
                             <?php } ?>
@@ -590,7 +602,7 @@
           $("#indo-positif").html(data.positif);
           $("#indo-sembuh").html(data.sembuh);
           $("#indo-meninggal").html(data.meninggal);  
-          $("#indo-dirawat").html(data.dirawat);  
+          $("#indo-isolasi").html(data.isolasi);  
           $("#data-global").attr("style", "");
         }
       });
@@ -599,7 +611,7 @@
           $("#jatim-positif").html(data.Kasus_Posi);
           $("#jatim-sembuh").html(data.Kasus_Semb);
           $("#jatim-meninggal").html(data.Kasus_Meni);  
-          $("#jatim-dirawat").html(data.Kasus_Posi - data.Kasus_Semb - data.Kasus_Meni);  
+          $("#jatim-isolasi").html(data.Kasus_Posi - data.Kasus_Semb - data.Kasus_Meni);  
           $("#data-jatim").attr("style", "");
         }
       });
@@ -639,32 +651,39 @@
         var fitur = dataKecamatan[feature.properties['kecamatan']];
 
         var nama = feature.properties['kecamatan'];
-        var jumlah_odp = fitur['odp'];
-        var odp_pantau = fitur['odp-dipantau'];
-        var odp_selesai = fitur['odp-selesai-dipantau'];
-        var odp_meninggal = fitur['odp-meninggal'];
+        var jumlah_kontak_erat = fitur['kontak_erat'];
+        var kontak_erat_pantau = fitur['kontak_erat-dipantau'];
+        var kontak_erat_selesai = fitur['kontak_erat-selesai-dipantau'];
 
-        var jumlah_pdp = fitur['pdp'];
-        var jumlah_pdp_rawat = fitur['pdp-dirawat'];
-        var jumlah_pdp_sembuh = fitur['pdp-sembuh'];
-        var pdp_meninggal = fitur['pdp-meninggal'];
+        var jumlah_probable = fitur['probable'];
+        var probable_pantau = fitur['probable-isolasi'];
+        var probable_selesai = fitur['probable-selesai-isolasi'];
+        var probable_meninggal = fitur['probable-meninggal'];
 
-        var covid_sembuh = fitur['confirm-sembuh'];
-        var jumlah_covid = fitur['confirm'];
-        var covid_meninggal = fitur['confirm-meninggal'];
-        var covid_awas = fitur['confirm-pengawasan'];
-        var covid_perawatan = fitur['confirm-dirawat'];
+        var jumlah_suspek = fitur['suspek'];
+        var jumlah_suspek_rawat = fitur['suspek-isolasi'];
+        var jumlah_suspek_sembuh = fitur['suspek-selesai-isolasi'];
+        var suspek_meninggal = fitur['suspek-meninggal'];
+
+        var covid_sembuh = fitur['konfirmasi-sembuh'];
+        var jumlah_covid = fitur['konfirmasi'];
+        var covid_meninggal = fitur['konfirmasi-meninggal'];
+        var covid_awas = fitur['konfirmasi-pengawasan'];
+        var covid_perawatan = fitur['konfirmasi-isolasi'];
 
         var contentPopup =
             "<h5 style='margin-bottom:5px;'>Kecamatan <b>" + nama + "</b></h5>" +
-            "<br><strong>Jumlah ODP :</strong> " + jumlah_odp + " Kasus" +
-            "<br><strong>Jumlah ODP Masa Pantau :</strong> " + odp_pantau + " Kasus" +
-            "<br><strong>Jumlah ODP Selesai Masa Pantau :</strong> " + odp_selesai + " Kasus" +
-            "<br><strong>Jumlah ODP Meninggal :</strong> " + odp_meninggal + " Kasus" +
-            "<br><strong>Jumlah PDP :</strong> " + jumlah_pdp + " Kasus" +
-            "<br><strong>Jumlah PDP Dirawat:</strong> " + jumlah_pdp_rawat + " Kasus" +
-            "<br><strong>Jumlah PDP Sembuh :</strong> " + jumlah_pdp_sembuh + " Kasus" +
-            "<br><strong>Jumlah PDP Meninggal :</strong> " + pdp_meninggal + " Kasus" +
+            "<br><strong>Jumlah Kontak Erat :</strong> " + jumlah_kontak_erat + " Kasus" +
+            "<br><strong>Jumlah Kontak Erat Isolasi :</strong> " + kontak_erat_pantau + " Kasus" +
+            "<br><strong>Jumlah Kontak Erat Selesai Isolasi :</strong> " + kontak_erat_selesai + " Kasus" +
+            "<br><strong>Jumlah Probable :</strong> " + jumlah_probable + " Kasus" +
+            "<br><strong>Jumlah Probable Isolasi :</strong> " + probable_pantau + " Kasus" +
+            "<br><strong>Jumlah Probable Selesai Isolasi :</strong> " + probable_selesai + " Kasus" +
+            "<br><strong>Jumlah Probable Meninggal :</strong> " + probable_meninggal + " Kasus" +
+            "<br><strong>Jumlah Suspek :</strong> " + jumlah_suspek + " Kasus" +
+            "<br><strong>Jumlah Suspek Isolasi:</strong> " + jumlah_suspek_rawat + " Kasus" +
+            "<br><strong>Jumlah Suspek Selesai Isolasi :</strong> " + jumlah_suspek_sembuh + " Kasus" +
+            "<br><strong>Jumlah Suspek Meninggal :</strong> " + suspek_meninggal + " Kasus" +
             "<br><strong>Terkonfirmasi Covid-19 :</strong> " + jumlah_covid + " Kasus" +
             "<br><strong>Dalam Perawatan Covid-19 :</strong> " + covid_perawatan + " Kasus" +
             "<br><strong>Dalam Pengawasan Covid-19 :</strong> " + covid_awas + " Kasus" +
@@ -681,13 +700,13 @@
           var color;
           var fitur = dataKecamatan[feature.properties['kecamatan']];
           
-          if( fitur.confirm > 0){
+          if( fitur.konfirmasi > 0){
             color = '#ef5350';
-          } else if( fitur.pdp > 0){
+          } else if( fitur.suspek > 0){
             color = '#ff8f00';
-          } else if( fitur.odp > 0){
+          } else if( fitur.probable > 0){
             color = '#ffeb3b';
-          } else if( fitur.odr > 0){
+          } else if( fitur.kontak_erat > 0){
             color = '#42a5f5';
           } else {
             color = '#4caf50';
@@ -708,49 +727,49 @@
       }
       <?php  
         $hari = array(); 
-        $summary_odr = array(); $summary_odp = array(); $summary_pdp = array(); $summary_confirm = array();
-        $odr_dipantau = array(); $odr_selesai_dipantau = array();
-        $odp_dipantau = array(); $odp_selesai_dipantau = array(); $odp_meninggal = array();
-        $pdp_dirawat = array(); $pdp_sembuh = array(); $pdp_meninggal = array();
-        $confirm_dirawat = array(); $confirm_sembuh = array(); $confirm_pengawasan = array();  $confirm_meninggal = array();
+        $summary_kontak_erat = array(); $summary_probable = array(); $summary_suspek = array(); $summary_konfirmasi = array();
+        $kontak_erat_dipantau = array(); $kontak_erat_selesai_dipantau = array();
+        $probable_dipantau = array(); $probable_selesai_dipantau = array(); $probable_meninggal = array();
+        $suspek_isolasi = array(); $suspek_sembuh = array(); $suspek_meninggal = array();
+        $konfirmasi_isolasi = array(); $konfirmasi_sembuh = array(); $konfirmasi_pengawasan = array();  $konfirmasi_meninggal = array();
         foreach($dailes as $dl){
           $hari[] = $dl->date_only;
-          $summary_odr[] = $dl->odr->total;
-          $summary_odp[] = $dl->odp->total;
-          $summary_pdp[] = $dl->pdp->total;
-          $summary_confirm[] = $dl->confirm->total;
-          $odr_dipantau[] = $dl->odr->dipantau;
-          $odr_selesai_dipantau[] = $dl->odr->{"selesai-dipantau"};
-          $odp_dipantau[] = $dl->odp->dipantau;
-          $odp_selesai_dipantau[] = $dl->odp->{"selesai-dipantau"};
-          $odp_meninggal[] = $dl->odp->meninggal;
-          $pdp_dirawat[] = $dl->pdp->dirawat;
-          $pdp_sembuh[] = $dl->pdp->sembuh;
-          $pdp_meninggal[] = $dl->pdp->meninggal;
-          $confirm_dirawat[] = $dl->confirm->dirawat;
-          $confirm_sembuh[] = $dl->confirm->sembuh;
-          $confirm_meninggal[] = $dl->confirm->meninggal;
-          $confirm_pengawasan[] = $dl->confirm->pengawasan;
+          $summary_kontak_erat[] = $dl->kontak_erat->total;
+          $summary_probable[] = $dl->probable->total;
+          $summary_suspek[] = $dl->suspek->total;
+          $summary_konfirmasi[] = $dl->konfirmasi->total;
+          $kontak_erat_dipantau[] = $dl->kontak_erat->dipantau;
+          $kontak_erat_selesai_dipantau[] = $dl->kontak_erat->{"selesai-dipantau"};
+          $probable_dipantau[] = $dl->probable->isolasi;
+          $probable_selesai_dipantau[] = $dl->probable->{"selesai-isolasi"};
+          $probable_meninggal[] = $dl->probable->meninggal;
+          $suspek_isolasi[] = $dl->suspek->isolasi;
+          $suspek_sembuh[] = $dl->suspek->{"selesai-isolasi"};
+          $suspek_meninggal[] = $dl->suspek->meninggal;
+          $konfirmasi_isolasi[] = $dl->konfirmasi->dirawat;
+          $konfirmasi_sembuh[] = $dl->konfirmasi->sembuh;
+          $konfirmasi_meninggal[] = $dl->konfirmasi->meninggal;
+          $konfirmasi_pengawasan[] = $dl->konfirmasi->pengawasan;
         }
       ?>       
       var kasustotal = {
           series: [{
-                  name: 'ODR',
+                  name: 'kontak_erat',
                   type: 'line',
-                  data: [<?= implode(',', $summary_odr); ?>]
+                  data: [<?= implode(',', $summary_kontak_erat); ?>]
               }, {
-                  name: 'ODP',
+                  name: 'probable',
                   type: 'line',
-                  data: [<?= implode(',', $summary_odp); ?>]
+                  data: [<?= implode(',', $summary_probable); ?>]
               }, {
-                  name: 'PDP',
+                  name: 'suspek',
                   type: 'line',
-                  data: [<?= implode(',', $summary_pdp); ?>]
+                  data: [<?= implode(',', $summary_suspek); ?>]
               },
               {
                   name: 'Postif',
                   type: 'line',
-                  data: [<?= implode(',', $summary_confirm); ?> ]
+                  data: [<?= implode(',', $summary_konfirmasi); ?> ]
               }
           ],
           chart: {
@@ -865,19 +884,19 @@
           }
       };
 
-      var kasus_odr = {
+      var kasus_kontak_erat = {
           series: [{
-                  name: 'Kasus ODR',
+                  name: 'Kasus kontak_erat',
                   type: 'column',
-                  data: [<?= implode(',', $summary_odr); ?>]
+                  data: [<?= implode(',', $summary_kontak_erat); ?>]
               }, {
                   name: 'Selesai Dipantau',
                   type: 'line',
-                  data: [<?= implode(',', $odr_selesai_dipantau); ?>]
+                  data: [<?= implode(',', $kontak_erat_selesai_dipantau); ?>]
               }, {
                   name: 'Dipantau',
                   type: 'line',
-                  data: [<?= implode(',', $odr_dipantau); ?>]
+                  data: [<?= implode(',', $kontak_erat_dipantau); ?>]
               }
           ],
           chart: {
@@ -992,23 +1011,23 @@
           }
       };
 
-      var kasus_odp = {
+      var kasus_probable = {
           series: [{
-                  name: 'Kasus ODP',
+                  name: 'Kasus probable',
                   type: 'column',
-                  data: [<?= implode(',', $summary_odp); ?>]
+                  data: [<?= implode(',', $summary_probable); ?>]
               }, {
                   name: 'Selesai Dipantau',
                   type: 'line',
-                  data: [<?= implode(',', $odp_selesai_dipantau); ?>]
+                  data: [<?= implode(',', $probable_selesai_dipantau); ?>]
               }, {
                   name: 'Dipantau',
                   type: 'line',
-                  data: [<?= implode(',', $odp_dipantau); ?>]
+                  data: [<?= implode(',', $probable_dipantau); ?>]
               }, {
                   name: 'Meninggal',
                   type: 'line',
-                  data: [<?= implode(',', $odp_meninggal); ?>]
+                  data: [<?= implode(',', $probable_meninggal); ?>]
               }
           ],
           chart: {
@@ -1123,23 +1142,23 @@
           }
       };
 
-      var kasus_pdp = {
+      var kasus_suspek = {
           series: [{
-                  name: 'Kasus PDP',
+                  name: 'Kasus suspek',
                   type: 'column',
-                  data: [<?= implode(',', $summary_odp); ?>]
+                  data: [<?= implode(',', $summary_probable); ?>]
               }, {
                   name: 'Selesai Dipantau',
                   type: 'line',
-                  data: [<?= implode(',', $odp_selesai_dipantau); ?>]
+                  data: [<?= implode(',', $probable_selesai_dipantau); ?>]
               }, {
                   name: 'Dipantau',
                   type: 'line',
-                  data: [<?= implode(',', $odp_dipantau); ?>]
+                  data: [<?= implode(',', $probable_dipantau); ?>]
               }, {
                   name: 'Meninggal',
                   type: 'line',
-                  data: [<?= implode(',', $odp_meninggal); ?>]
+                  data: [<?= implode(',', $probable_meninggal); ?>]
               }
           ],
           chart: {
@@ -1254,27 +1273,27 @@
           }
       };
 
-      var kasus_confirm = {
+      var kasus_konfirmasi = {
           series: [{
                   name: 'Positif COVID-19',
                   type: 'column',
-                  data: [<?= implode(',', $summary_confirm); ?>]
+                  data: [<?= implode(',', $summary_konfirmasi); ?>]
               }, {
                   name: 'Sembuh',
                   type: 'line',
-                  data: [<?= implode(',', $confirm_sembuh); ?>]
+                  data: [<?= implode(',', $konfirmasi_sembuh); ?>]
               }, {
                   name: 'Pengawasan',
                   type: 'line',
-                  data: [<?= implode(',', $confirm_pengawasan); ?>]
+                  data: [<?= implode(',', $konfirmasi_pengawasan); ?>]
               }, {
                   name: 'Meninggal',
                   type: 'line',
-                  data: [<?= implode(',', $odp_meninggal); ?>]
+                  data: [<?= implode(',', $probable_meninggal); ?>]
               }, {
                   name: 'Dalam Perawatan',
                   type: 'line',
-                  data: [<?= implode(',', $confirm_dirawat); ?>]
+                  data: [<?= implode(',', $konfirmasi_isolasi); ?>]
               }
           ],
           chart: {
@@ -1393,36 +1412,36 @@
       var chart = new ApexCharts(document.querySelector("#chart-kasus"), kasustotal);
       chart.render();
 
-      var chart2 = new ApexCharts(document.querySelector("#chart-kasus-odr"), kasus_odr);
+      var chart2 = new ApexCharts(document.querySelector("#chart-kasus-kontak_erat"), kasus_kontak_erat);
       chart2.render();
 
-      var chart = new ApexCharts(document.querySelector("#chart-kasus-odp"), kasus_odp);
+      var chart = new ApexCharts(document.querySelector("#chart-kasus-probable"), kasus_probable);
       chart.render();
 
-      var chart2 = new ApexCharts(document.querySelector("#chart-kasus-pdp"), kasus_pdp);
+      var chart2 = new ApexCharts(document.querySelector("#chart-kasus-suspek"), kasus_suspek);
       chart2.render();
 
-      var chart2 = new ApexCharts(document.querySelector("#chart-kasus-positif"), kasus_confirm);
+      var chart2 = new ApexCharts(document.querySelector("#chart-kasus-positif"), kasus_konfirmasi);
       chart2.render();
 
       <?php  
         $kecamatan = array(); 
-        $kec_odr = array(); $kec_odp = array(); $kec_pdp = array(); $kec_confirm = array();
+        $kec_kontak_erat = array(); $kec_probable = array(); $kec_suspek = array(); $kec_konfirmasi = array();
         foreach($current->kecamatan as $kec_key => $kec_value){
           $kecamatan[] = $kec_key;
-          $kec_odr[] = $kec_value->odr;
-          $kec_odp[] = $kec_value->odp;
-          $kec_pdp[] = $kec_value->pdp;
-          $kec_confirm[] = $kec_value->confirm;
+          $kec_kontak_erat[] = $kec_value->kontak_erat;
+          $kec_probable[] = $kec_value->probable;
+          $kec_suspek[] = $kec_value->suspek;
+          $kec_konfirmasi[] = $kec_value->konfirmasi;
         }
       ?> 
       
       var options = {
         series: [
-          { name: 'Kasus ODR',data: [<?= implode(',', $kec_odr); ?>]}, 
-          { name: 'Kasus ODP',data: [<?= implode(',', $kec_odp); ?>]},
-          { name: 'Kasus PDP',data: [<?= implode(',', $kec_pdp); ?>]}, 
-          { name: 'Kasus Positif',data: [<?= implode(',', $kec_confirm); ?>]}
+          { name: 'Kasus kontak_erat',data: [<?= implode(',', $kec_kontak_erat); ?>]}, 
+          { name: 'Kasus probable',data: [<?= implode(',', $kec_probable); ?>]},
+          { name: 'Kasus suspek',data: [<?= implode(',', $kec_suspek); ?>]}, 
+          { name: 'Kasus Positif',data: [<?= implode(',', $kec_konfirmasi); ?>]}
         ],
         colors:[chartColors.orange,chartColors.blue,chartColors.purple,chartColors.red],
         chart: {
