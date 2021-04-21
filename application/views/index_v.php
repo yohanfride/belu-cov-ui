@@ -6,16 +6,16 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta name="google-site-verification" content="fddyRKTavZo0HGhiughmRABhLVl-rwKOHkMvI6YS9Es" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Situs Informasi dan Pemantauan COVID-19 | Kabupten Sampang">
-  <meta property="og:description" content="Informasi resmi mengenai COVID-19 di Kabupten Sampang">
+  <meta property="og:title" content="Situs Informasi dan Pemantauan COVID-19 | Kabupten Belu">
+  <meta property="og:description" content="Informasi resmi mengenai COVID-19 di Kabupten Belu">
   <meta property="og:image" content="<?= base_url();?>assets-front/img/logo.png">
   <meta property="og:url" content="<?= base_url();?>">
   <meta name="twitter:card" content="summary_large_image">
-  <meta property="og:site_name" content="Situs Informasi dan Pemantauan COVID-19 | Kabupten Sampang">
-  <meta name="twitter:image:alt" content="Situs Informasi dan Pemantauan COVID-19 | Kabupten Sampang">
+  <meta property="og:site_name" content="Situs Informasi dan Pemantauan COVID-19 | Kabupten Belu">
+  <meta name="twitter:image:alt" content="Situs Informasi dan Pemantauan COVID-19 | Kabupten Belu">
 
-  <title>Situs Informasi dan Pemantauan COVID-19 | Kabupten Sampang </title>
-  <meta content="Monitoring Data COVID-19 Kabupaten Sampang - Jawa Timur. Update Terakhir : <?= $day; ?>,  <?= $tanggal; ?> | Pukul <?= $jam?> WIB (Data dapat berubah sewaktu-waktu)." name="descriptison">
+  <title>Situs Informasi dan Pemantauan COVID-19 | Kabupten Belu </title>
+  <meta content="Monitoring Data COVID-19 Kabupaten Belu - Nusa Tenggara Timur. Update Terakhir : <?= $day; ?>,  <?= $tanggal; ?> | Pukul <?= $jam?> WIB (Data dapat berubah sewaktu-waktu)." name="descriptison">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
@@ -56,7 +56,7 @@
           <div id="title-teks" style="display: flex; flex-direction:column; padding-left: 10px;font-weight: bold;line-height:1em;margin-top: 5px;/*! margin-top:1rem; */" bis_skin_checked="1">
           <span style="color: #fff;">
             <span class="logo mr-auto" style="font-size: 14px">Posko Covid-19</span><br>
-            <span class="logo mr-auto" style="font-weight: normal;font-size: 17.8px;">Kabupaten Sampang</span>
+            <span class="logo mr-auto" style="font-weight: normal;font-size: 17.8px;">Kabupaten Belu</span>
           </span>
         </div>
       </div>
@@ -285,7 +285,7 @@
     <section id="peta-sebaran" class="about">
       <div class="container" data-aos="fade-up" style="max-width: 98%;">
         <div class="section-title" style="padding-bottom: 0px;">
-          <h2>Peta Perserbaran Covid-19 Kabupaten Sampang</h2>
+          <h2>Peta Perserbaran Covid-19 Kabupaten Belu</h2>
         </div>
         <div class="row" bis_skin_checked="1">
           <div class="info-peta" bis_skin_checked="1">
@@ -314,7 +314,7 @@
     <section id="trend-grafik" class="trend-graph section-bg">
       <div class="container container-fluid">
         <div class="section-title" style="padding-bottom: 0px;">
-          <h2>Trend Grafik Covid-19 Kabupaten Sampang</h2>
+          <h2>Trend Grafik Covid-19 Kabupaten Belu</h2>
         </div>
         <div class="row">
           
@@ -533,15 +533,15 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
-            <h4>Pemerintah Kabupaten Sampang</h4>
+            <h4>Pemerintah Kabupaten Belu</h4>
             <div class="info">
               <div class="address">
                 <i class="icofont-google-map"></i>
-                <p> Jl. Jamaluddin No. 1A, Sampang – Jawa Timur</p>
+                <p> Jl. Jamaluddin No. 1A, Belu – Jawa Timur</p>
               </div>
               <div class="email">
                 <i class="icofont-envelope"></i>
-                <p>info@sampangkab.go.id</p>
+                <p>info@Belukab.go.id</p>
               </div>
               <div class="phone">
                 <i class="icofont-phone"></i>
@@ -549,7 +549,7 @@
               </div>
               <div class="phone">
                 <i class="icofont-web"></i>
-                <p><a href="https://sampangkab.go.id" target="__blank" style="color:#fff;">https://sampangkab.go.id</a></p>
+                <p><a href="https://Belukab.go.id" target="__blank" style="color:#fff;">https://Belukab.go.id</a></p>
               </div>
             </div>
           </div>
@@ -559,7 +559,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Posko Covid-19</span></strong> - Pemerintah Kabupaten Sampang
+        &copy; Copyright <strong><span>Posko Covid-19</span></strong> - Pemerintah Kabupaten Belu
       </div>
     </div>
   </footer><!-- End Footer -->
@@ -618,15 +618,15 @@
 
       //var maps = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', { 
       // Maps ///
-      var maps = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', { 
-            attribution: 'Data © <a href="http://sampangkab.go.id">SIM PUPR Kabupaten sampang</a>',
+      var maps = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
+            //attribution: 'Data © <a href="http://Belukab.go.id">SIM PUPR Kabupaten Belu</a>',
             maxZoom: 18,
             minZoom: 10,
             id: 'mapbox.streets',
             accessToken: 'pk.eyJ1IjoiYWRlc3VsYWltYW4iLCJhIjoiY2prcWFqcW85MW00YzNsbW54ZThscmpvdSJ9.ai7YM6Pj5ayquazYjHnOCA'
           }),
         satelit = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/256/{z}/{x}/{y}?access_token={accessToken}', { 
-            attribution: 'Data © <a href="http://sampangkab.go.id">SIM PUPR Kabupaten sampang</a>',
+            //attribution: 'Data © <a href="http://Belukab.go.id">SIM PUPR Kabupaten Belu</a>',
             maxZoom: 18,
             minZoom: 10,
             accessToken: 'pk.eyJ1IjoiYWRlc3VsYWltYW4iLCJhIjoiY2prcWFqcW85MW00YzNsbW54ZThscmpvdSJ9.ai7YM6Pj5ayquazYjHnOCA'
@@ -635,9 +635,9 @@
 
       var map = L.map('map',  {
         editable: true,
-        center: [-7.07336, 113.2487],
-        zoom: 11,
-        scrollWheelZoom: false,
+        center: [-9.107193,124.8882573],
+        zoom: 12,
+        //scrollWheelZoom: false,
         zoomControl: true,
         layers: [maps, bounds_group]
       });
@@ -694,29 +694,29 @@
         layer.bindTooltip(feature.properties['kecamatan'], {permanent: true, direction:"center", className: 'kecText'});
       }
 
-      var layer_kecamatan = new L.geoJson(kecamatan, {
-        onEachFeature: pop_kecamatan,
-        style: function(feature) {
-          var color;
-          var fitur = dataKecamatan[feature.properties['kecamatan']];
+      // var layer_kecamatan = new L.geoJson(kecamatan, {
+      //   onEachFeature: pop_kecamatan,
+      //   style: function(feature) {
+      //     var color;
+      //     var fitur = dataKecamatan[feature.properties['kecamatan']];
           
-          if( fitur.konfirmasi > 0){
-            color = '#ef5350';
-          } else if( fitur.suspek > 0){
-            color = '#ff8f00';
-          } else if( fitur.probable > 0){
-            color = '#ffeb3b';
-          } else if( fitur.kontak_erat > 0){
-            color = '#42a5f5';
-          } else {
-            color = '#4caf50';
-          }
-          return {fillOpacity: 0.5,color: "black", fillColor: color, weight:0.5};
-        }
-      });
+      //     if( fitur.konfirmasi > 0){
+      //       color = '#ef5350';
+      //     } else if( fitur.suspek > 0){
+      //       color = '#ff8f00';
+      //     } else if( fitur.probable > 0){
+      //       color = '#ffeb3b';
+      //     } else if( fitur.kontak_erat > 0){
+      //       color = '#42a5f5';
+      //     } else {
+      //       color = '#4caf50';
+      //     }
+      //     return {fillOpacity: 0.5,color: "black", fillColor: color, weight:0.5};
+      //   }
+      // });
 
-      bounds_group.addLayer(layer_kecamatan);
-      map.addLayer(layer_kecamatan);
+      // bounds_group.addLayer(layer_kecamatan);
+      // map.addLayer(layer_kecamatan);
       // End Maps ///
 
       var chartColors ={
