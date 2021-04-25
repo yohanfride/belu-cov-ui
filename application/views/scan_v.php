@@ -465,7 +465,7 @@
     }
 
     function onError(err) {
-        var center = [-7.1888675,113.2403184];
+        var center = [-9.107518,124.8877623];
         console.log(`ERROR(${err.code}): ${err.message}`);
         $("#btnError").click();
         //alert("Sistem tidak dapat mengakes sensor GPS Anda");
