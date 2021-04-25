@@ -2582,6 +2582,14 @@ span.info-peta-pdp {
     background-color: #ffa000;
 }
 
+span.info-peta-pj {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #ab47bc;
+}
+
 span.info-peta-positif {
     height: 15px;
     width: 15px;

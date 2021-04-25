@@ -46,7 +46,7 @@ class Home extends CI_Controller {
 		$data['video'] = $this->video_m->search(array('status'=>1))->data;
 		$data['infografis'] = $this->infografis_m->search(array('status'=>1))->data;
 		// echo "<pre>";
-		// print_r($data['dailes']);
+		// print_r($data['current']);
 		// echo "</pre>";
 		// exit();
 		$this->load->view('index_v', $data);
@@ -83,7 +83,7 @@ class Home extends CI_Controller {
 		$obj = json_decode($json);
 		$red = array();
 		foreach ($obj as $key => $value) {
-			if($value->attributes->Provinsi == "Jawa Timur"){
+			if($value->attributes->Provinsi == "Nusa Tenggara Timur"){
 				$res = $value->attributes;
 				break;
 			}

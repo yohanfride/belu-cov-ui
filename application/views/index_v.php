@@ -126,12 +126,33 @@
               <h6 class="font-weight-light">Total Kasus</h6>
               <div class="row">
                 <div class="col-lg-6 col-md-6 mt-4">
-                    <h5 class="count text-blue-lighten-1"><?= $current->kontak_erat->dipantau; ?></h5>
-                    <h6 class="sub-count font-weight-light">Proses Pemantauan</h6>
+                    <h5 class="count text-blue-lighten-1"><?= $current->kontak_erat->isolasi; ?></h5>
+                    <h6 class="sub-count font-weight-light">Isolasi</h6>
                 </div>
                 <div class="col-lg-6 col-md-6 mt-4">
-                    <h5 class="count text-blue-lighten-1"><?= $current->kontak_erat->{'selesai-dipantau'}; ?></h5>
-                    <h6 class="sub-count font-weight-light">Selesai Pemantauan</h6>
+                    <h5 class="count text-blue-lighten-1"><?= $current->kontak_erat->{'selesai-isolasi'}; ?></h5>
+                    <h6 class="sub-count font-weight-light">Selesai Isolasi</h6>
+                </div>
+              </div>
+              <div class="btn-wrap">
+                <span  class="btn-buy"><?= $tanggal; ?></span>
+              </div>
+            </div>
+          </div>
+
+           <div class="col-lg-6 col-md-6 aos-init aos-animate mb-md-2" data-aos="fade-up" data-aos-delay="200">
+            <div class="box ">
+              <h3 class="bg-purple-darken-1">Pelaku Perjalan</h3>
+              <h4 class="count text-purple-darken-1"><?= $current->pelaku_perjalanan->total; ?></h4>
+              <h6 class="font-weight-light">Total Kasus</h6>
+              <div class="row">
+                <div class="col-lg-6 col-md-6 mt-4">
+                    <h5 class="count text-purple-darken-1"><?= $current->pelaku_perjalanan->isolasi; ?></h5>
+                    <h6 class="sub-count font-weight-light">Masih isolasi</h6>
+                </div>
+                <div class="col-lg-6 col-md-6 mt-4">
+                    <h5 class="count text-purple-darken-1"><?= $current->pelaku_perjalanan->{"selesai-isolasi"}; ?></h5>
+                    <h6 class="sub-count font-weight-light">Selesai Isolasi</h6>
                 </div>
               </div>
               <div class="btn-wrap">
@@ -189,34 +210,37 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6 aos-init aos-animate mb-md-2" data-aos="fade-up" data-aos-delay="200">
+
+         
+
+          <div class="col-lg-12 col-md-12 aos-init aos-animate mb-md-2" data-aos="fade-up" data-aos-delay="200">
             <div class="box ">
               <h3 class="bg-red-lighten-1">Terkonfimasi Positif Covid-19</h3>
-              <h4 class="count text-red-lighten-1"><?= $current->konfirmasi->total; ?></h4>
+              <h4 class="count text-red-lighten-1"><?= $current->terkonfirmasi->total; ?></h4>
               <h6 class="font-weight-light">Total Positif</h6>
               <div class="row">
                 <div class="col-lg-3 col-md-6 mt-4">
-                    <h5 class="count text-red-lighten-1"><?= $current->konfirmasi->dirawat; ?></h5>
+                    <h5 class="count text-red-lighten-1"><?= $current->terkonfirmasi->dirawat; ?></h5>
                     <h6 class="sub-count font-weight-light">Dalam Perawatan</h6>
                 </div>
                 <div class="col-lg-3 col-md-6 mt-4">
-                    <h5 class="count text-red-lighten-1"><?= $current->konfirmasi->pengawasan; ?></h5>
+                    <h5 class="count text-red-lighten-1"><?= $current->terkonfirmasi->pengawasan; ?></h5>
                     <h6 class="sub-count font-weight-light">Dalam Pengawasan</h6>
                 </div>
                 <div class="col-lg-3 col-md-6 mt-4">
-                    <h5 class="count text-red-lighten-1"><?= $current->konfirmasi->sembuh; ?></h5>
+                    <h5 class="count text-red-lighten-1"><?= $current->terkonfirmasi->sembuh; ?></h5>
                     <h6 class="sub-count font-weight-light">Sembuh</h6>
                 </div>
                 <div class="col-lg-3 col-md-6 mt-4">
-                    <h5 class="count text-red-lighten-1"><?= $current->konfirmasi->meninggal; ?></h5>
+                    <h5 class="count text-red-lighten-1"><?= $current->terkonfirmasi->meninggal; ?></h5>
                     <h6 class="sub-count font-weight-light">Meninggal</h6>
                 </div>
                 <div class="col-lg-6 col-md-6 mt-4">
-                    <h5 class="count text-red-lighten-1"><?= $current->konfirmasi->{"dengan-gejala"}; ?></h5>
+                    <h5 class="count text-red-lighten-1"><?= $current->terkonfirmasi->{"dengan-gejala"}; ?></h5>
                     <h6 class="sub-count font-weight-light">Kasus Dengan Gejala</h6>
                 </div>
                 <div class="col-lg-6 col-md-6 mt-4">
-                    <h5 class="count text-red-lighten-1"><?= $current->konfirmasi->{"tanpa-gejala"}; ?></h5>
+                    <h5 class="count text-red-lighten-1"><?= $current->terkonfirmasi->{"tanpa-gejala"}; ?></h5>
                     <h6 class="sub-count font-weight-light">Kasus Tanpa Gejala</h6>
                 </div>
               </div>
@@ -228,7 +252,7 @@
 
           <div class="col-lg-6 col-md-6 aos-init aos-animate mb-md-2" data-aos="fade-up" data-aos-delay="200" style="display: none;" id="data-global"> 
             <div class="box ">
-              <h3 class="bg-red-darken-4">Positif Covid-19 Jawa Timur</h3>
+              <h3 class="bg-red-darken-4">Positif Covid-19 Nusa Tenggara Timur</h3>
               <h4 class="count text-light-blue-darken-4" id="jatim-positif">0</h4>
               <h6 class="font-weight-light">Total Positif</h6>
               <div class="row">
@@ -293,6 +317,7 @@
               <span class="info-peta-odr"></span> Ada Kasus Kontak Erat &nbsp;&nbsp;
               <span class="info-peta-odp"></span> Ada Kasus Probable &nbsp;&nbsp;
               <span class="info-peta-pdp"></span> Ada Kasus Suspek &nbsp;&nbsp;
+              <span class="info-peta-pj"></span> Ada Kasus Pelaku Perjalanan &nbsp;&nbsp;
               <span class="info-peta-positif"></span> Ada Kasus Positif Covid-19
           </div>
           <div bis_skin_checked="1"></div>
@@ -338,6 +363,15 @@
 
           <div class="col-lg-6 col-md-6 aos-init aos-animate mb-md-2" data-aos="fade-up" data-aos-delay="200">
             <div class="box ">
+              <h3 class=".bg-gray text-purple-darken-1">Trend Grafik Pelaku Perjalanan</h3>
+              <div class="row">
+                <div  id="chart-kasus-pelaku_perjalanan" class="chart-canvas"></div >  
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6 aos-init aos-animate mb-md-2" data-aos="fade-up" data-aos-delay="200">
+            <div class="box ">
               <h3 class=".bg-gray text-yellow-darken-2">Trend Grafik Probable</h3>
               <div class="row">
                 <div id="chart-kasus-probable" class="chart-canvas"></div >  
@@ -354,7 +388,7 @@
             </div>
           </div>
 
-          <div class="col-lg-6 col-md-6 aos-init aos-animate mb-md-2" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-12 col-md-12 aos-init aos-animate mb-md-2" data-aos="fade-up" data-aos-delay="200">
             <div class="box ">
               <h3 class=".bg-gray text-red-lighten-1">Trend Grafik Terkonfimasi Positif Covid-19</h3>
               <div class="row">
@@ -362,6 +396,9 @@
               </div>
             </div>
           </div>
+
+          
+
         </div>
       </div>
     </section><!-- End Trend Grafik Section -->
@@ -397,9 +434,10 @@
                               <th style="text-align:center">Kontak Erat</th>
                               <th style="text-align:center">Probable</th>
                               <th style="text-align:center">Suspek</th>
-                              <th style="text-align:center">Konfirmasi Positif</th>
-                              <th style="text-align:center">Konfirmasi Dengan Gejala</th>
-                              <th style="text-align:center">Konfirmasi Tanpa Gejala</th>
+                              <th style="text-align:center">Pelaku Perjalanan</th>
+                              <th style="text-align:center">Terkonfirmasi Positif</th>
+                              <th style="text-align:center">Terkonfirmasi Dengan Gejala</th>
+                              <th style="text-align:center">Terkonfirmasi Tanpa Gejala</th>
                               <th style="text-align:center">Total</th>
                             </tr>
                           </thead>
@@ -411,9 +449,10 @@
                               <td style="text-align:center"> <?= $kecdata->kontak_erat ?> </td>
                               <td style="text-align:center"> <?= $kecdata->probable ?></td>
                               <td style="text-align:center"> <?= $kecdata->suspek ?></td>
-                              <td style="text-align:center"> <?= $kecdata->konfirmasi ?></td>
-                              <td style="text-align:center"> <?= $kecdata->{"konfirmasi-dengan-gejala"} ?></td>
-                              <td style="text-align:center"> <?= $kecdata->{"konfirmasi-tanpa-gejala"} ?></td>
+                              <td style="text-align:center"> <?= $kecdata->pelaku_perjalanan ?></td>
+                              <td style="text-align:center"> <?= $kecdata->terkonfirmasi ?></td>
+                              <td style="text-align:center"> <?= $kecdata->{"terkonfirmasi-dengan-gejala"} ?></td>
+                              <td style="text-align:center"> <?= $kecdata->{"terkonfirmasi-tanpa-gejala"} ?></td>
                               <td style="text-align:center"> <?= $kecdata->total ?></td>
                             </tr>
                             <?php } ?>
@@ -537,7 +576,7 @@
             <div class="info">
               <div class="address">
                 <i class="icofont-google-map"></i>
-                <p> Jl. Jamaluddin No. 1A, Belu – Jawa Timur</p>
+                <p>  Jl. El Tari No.1, Umanen, Atambua Bar., Kabupaten Belu -  Nusa Tenggara Tim.</p>
               </div>
               <div class="email">
                 <i class="icofont-envelope"></i>
@@ -549,7 +588,7 @@
               </div>
               <div class="phone">
                 <i class="icofont-web"></i>
-                <p><a href="https://Belukab.go.id" target="__blank" style="color:#fff;">https://Belukab.go.id</a></p>
+                <p><a href="https://belukab.go.id/" target="__blank" style="color:#fff;">https://belukab.go.id/</a></p>
               </div>
             </div>
           </div>
@@ -737,19 +776,22 @@
           $summary_kontak_erat[] = $dl->kontak_erat->total;
           $summary_probable[] = $dl->probable->total;
           $summary_suspek[] = $dl->suspek->total;
-          $summary_konfirmasi[] = $dl->konfirmasi->total;
-          $kontak_erat_dipantau[] = $dl->kontak_erat->dipantau;
-          $kontak_erat_selesai_dipantau[] = $dl->kontak_erat->{"selesai-dipantau"};
+          $summary_pelaku_perjalanan[] = $dl->pelaku_perjalanan->total;
+          $summary_konfirmasi[] = $dl->terkonfirmasi->total;
+          $kontak_erat_dipantau[] = $dl->kontak_erat->isolasi;
+          $kontak_erat_selesai_dipantau[] = $dl->kontak_erat->{"selesai-isolasi"};
           $probable_dipantau[] = $dl->probable->isolasi;
           $probable_selesai_dipantau[] = $dl->probable->{"selesai-isolasi"};
           $probable_meninggal[] = $dl->probable->meninggal;
           $suspek_isolasi[] = $dl->suspek->isolasi;
-          $suspek_sembuh[] = $dl->suspek->{"selesai-isolasi"};
+          $suspek_selesai_isolasi[] = $dl->suspek->{"selesai-isolasi"};
           $suspek_meninggal[] = $dl->suspek->meninggal;
-          $konfirmasi_isolasi[] = $dl->konfirmasi->dirawat;
-          $konfirmasi_sembuh[] = $dl->konfirmasi->sembuh;
-          $konfirmasi_meninggal[] = $dl->konfirmasi->meninggal;
-          $konfirmasi_pengawasan[] = $dl->konfirmasi->pengawasan;
+          $konfirmasi_isolasi[] = $dl->terkonfirmasi->dirawat;
+          $konfirmasi_sembuh[] = $dl->terkonfirmasi->sembuh;
+          $konfirmasi_meninggal[] = $dl->terkonfirmasi->meninggal;
+          $konfirmasi_pengawasan[] = $dl->terkonfirmasi->pengawasan;
+          $pelaku_perjalanan_isolasi[] = $dl->pelaku_perjalanan->isolasi;
+          $pelaku_perjalanan_selesai_isolasi[] = $dl->pelaku_perjalanan->{"selesai-isolasi"};
         }
       ?>       
       var kasustotal = {
@@ -757,6 +799,10 @@
                   name: 'kontak_erat',
                   type: 'line',
                   data: [<?= implode(',', $summary_kontak_erat); ?>]
+              },{
+                  name: 'pelaku_perjalanan',
+                  type: 'line',
+                  data: [<?= implode(',', $summary_pelaku_perjalanan); ?>]
               }, {
                   name: 'probable',
                   type: 'line',
@@ -890,11 +936,11 @@
                   type: 'column',
                   data: [<?= implode(',', $summary_kontak_erat); ?>]
               }, {
-                  name: 'Selesai Dipantau',
+                  name: 'Selesai Isolasi',
                   type: 'line',
                   data: [<?= implode(',', $kontak_erat_selesai_dipantau); ?>]
               }, {
-                  name: 'Dipantau',
+                  name: 'Isolasi',
                   type: 'line',
                   data: [<?= implode(',', $kontak_erat_dipantau); ?>]
               }
@@ -1146,19 +1192,19 @@
           series: [{
                   name: 'Kasus suspek',
                   type: 'column',
-                  data: [<?= implode(',', $summary_probable); ?>]
+                  data: [<?= implode(',', $summary_suspek); ?>]
               }, {
-                  name: 'Selesai Dipantau',
+                  name: 'Selesai Isolasi',
                   type: 'line',
-                  data: [<?= implode(',', $probable_selesai_dipantau); ?>]
+                  data: [<?= implode(',', $suspek_selesai_isolasi); ?>]
               }, {
-                  name: 'Dipantau',
+                  name: 'Isolasi',
                   type: 'line',
-                  data: [<?= implode(',', $probable_dipantau); ?>]
+                  data: [<?= implode(',', $suspek_isolasi); ?>]
               }, {
                   name: 'Meninggal',
                   type: 'line',
-                  data: [<?= implode(',', $probable_meninggal); ?>]
+                  data: [<?= implode(',', $suspek_meninggal); ?>]
               }
           ],
           chart: {
@@ -1409,6 +1455,133 @@
       };
 
 
+      var kasus_pelaku_perjalanan = {
+          series: [{
+                  name: 'Kasus Pelaku Perjalanan',
+                  type: 'column',
+                  data: [<?= implode(',', $summary_pelaku_perjalanan); ?>]
+              }, {
+                  name: 'Selesai Isolasi',
+                  type: 'line',
+                  data: [<?= implode(',', $pelaku_perjalanan_selesai_isolasi); ?>]
+              }, {
+                  name: 'Isolasi',
+                  type: 'line',
+                  data: [<?= implode(',', $pelaku_perjalanan_isolasi); ?>]
+              }
+          ],
+          chart: {
+              height: 350,
+              type: 'line',
+              stacked: false,
+          },
+          colors: ['#ab47bc', '#35FD0B', '#2303c2', '#000000'],
+          stroke: {
+              width: [0, 5, 5, 5],
+              colors: ['#000000', '#2Cff00', '#04A7FF'],
+              curve: 'smooth',
+              // colors:['']
+          },
+          plotOptions: {
+              bar: {
+                  columnWidth: '50%'
+              }
+          },
+
+          fill: {
+              colors: ['#ab47bc', '#35FD0B', '#2303c2', '#000000'],
+              opacity: [0.85, 0.25, 1],
+              gradient: {
+                  inverseColors: false,
+                  // shade: 'light',
+                  type: "vertical",
+                  // opacityFrom: 0.85,
+                  // opacityTo: 0.55,
+                  stops: [0, 100, 100, 100]
+              }
+          },
+          labels: ['<?= implode("','", $hari); ?>'],
+          legend: {
+              show: true,
+              showForSingleSeries: false,
+              showForNullSeries: true,
+              showForZeroSeries: true,
+              position: 'bottom',
+              horizontalAlign: 'center',
+              floating: false,
+              fontSize: '14px',
+              fontFamily: 'Helvetica, Arial',
+              fontWeight: 400,
+              formatter: undefined,
+              inverseOrder: false,
+              width: undefined,
+              height: undefined,
+              tooltipHoverFormatter: undefined,
+              offsetX: 0,
+              offsetY: 0,
+              labels: {
+                  colors: ['#000000'],
+                  useSeriesColors: false
+              },
+              markers: {
+                  width: 12,
+                  height: 12,
+                  strokeWidth: 0,
+                  strokeColor: '#fff',
+                  fillColors: ['#ab47bc', '#35FD0B', '#2303c2', '#000000'],
+                  radius: 12,
+                  customHTML: undefined,
+                  onClick: undefined,
+                  offsetX: 0,
+                  offsetY: 0
+              },
+              itemMargin: {
+                  horizontal: 5,
+                  vertical: 0
+              },
+              onItemClick: {
+                  toggleDataSeries: true
+              },
+              onItemHover: {
+                  highlightDataSeries: true
+              },
+          },
+          markers: {
+
+              size: 5,
+              hover: {
+                  size: 9
+              }
+          },
+          xaxis: {
+              // type: 'datetime'
+          },
+          yaxis: {
+              title: {
+                  text: 'Orang',
+              },
+              labels: {
+                  formatter: function(val) {
+                      return val.toFixed(0)
+                  }
+              },
+              min: 0
+          },
+          tooltip: {
+              shared: true,
+              intersect: false,
+              y: {
+                  formatter: function(y) {
+                      if (typeof y !== "undefined") {
+                          return y.toFixed(0) + " Orang";
+                      }
+                      return y;
+
+                  }
+              }
+          }
+      };
+
       var chart = new ApexCharts(document.querySelector("#chart-kasus"), kasustotal);
       chart.render();
 
@@ -1424,6 +1597,10 @@
       var chart2 = new ApexCharts(document.querySelector("#chart-kasus-positif"), kasus_konfirmasi);
       chart2.render();
 
+      var chart2 = new ApexCharts(document.querySelector("#chart-kasus-pelaku_perjalanan"), kasus_pelaku_perjalanan);
+      chart2.render();
+
+
       <?php  
         $kecamatan = array(); 
         $kec_kontak_erat = array(); $kec_probable = array(); $kec_suspek = array(); $kec_konfirmasi = array();
@@ -1432,13 +1609,15 @@
           $kec_kontak_erat[] = $kec_value->kontak_erat;
           $kec_probable[] = $kec_value->probable;
           $kec_suspek[] = $kec_value->suspek;
-          $kec_konfirmasi[] = $kec_value->konfirmasi;
+          $kec_konfirmasi[] = $kec_value->terkonfirmasi;
+          $kec_pelaku_perjalanan[] = $kec_value->pelaku_perjalanan;
         }
       ?> 
       
       var options = {
         series: [
-          { name: 'Kasus kontak_erat',data: [<?= implode(',', $kec_kontak_erat); ?>]}, 
+          { name: 'Kasus kontak erat',data: [<?= implode(',', $kec_kontak_erat); ?>]}, 
+          { name: 'Kasus pelaku perjalanan',data: [<?= implode(',', $kec_pelaku_perjalanan); ?>]}, 
           { name: 'Kasus probable',data: [<?= implode(',', $kec_probable); ?>]},
           { name: 'Kasus suspek',data: [<?= implode(',', $kec_suspek); ?>]}, 
           { name: 'Kasus Positif',data: [<?= implode(',', $kec_konfirmasi); ?>]}

@@ -48,14 +48,16 @@
                                         <td><?= $s->jenis_kelamin ?></td>
                                         <td><?= $s->phone ?></td>
                                         <td style="text-align: center;">
-                                            <?php if(strtoupper($s->level) == "KONFIRMASI"){ ?>
-                                            <span class="badge badge-danger r-20" style="font-size: 12px;">Konfirmasi Positif - <?= (!empty($s->konfirmasi_gejala))?$s->konfirmasi_gejala:''; ?></span>
+                                            <?php if(strtoupper($s->level) == "TERKONFIRMASI"){ ?>
+                                            <span class="badge badge-danger r-20" style="font-size: 12px;">Terkonfirmasi Positif - <?= (!empty($s->konfirmasi_gejala))?$s->konfirmasi_gejala:''; ?></span>
                                             <?php } else if(strtoupper($s->level) == "SUSPEK"){ ?>
                                             <span class="badge badge-warning r-20" style="font-size: 12px;">Suspek</span>
                                             <?php } else if(strtoupper($s->level) == "PROBABLE"){ ?>
                                             <span class="badge badge-info r-20" style="font-size: 12px;">Probable</span>
                                             <?php } else if(strtoupper($s->level) == "KONTAK_ERAT"){ ?>
                                             <span class="badge badge-success r-20" style="font-size: 12px;">Kontak Erat</span>
+                                            <?php } else if(strtoupper($s->level) == "PELAKU_PERJALANAN"){ ?>
+                                            <span class="badge badge-success r-20" style="font-size: 12px;">Pelaku Perjalanan</span>
                                             <?php } ?>
                                         </td>
                                         <td><?= $s->level_status ?></td>
