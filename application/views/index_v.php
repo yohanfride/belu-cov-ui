@@ -1683,11 +1683,11 @@
       var url_jsaon='<?= base_url()?>home/faskes/';
 
       var map_faskes = L.map('map-faskes',{
-        center: [-7.07336, 113.2487],
+        center: [-9.107193,124.8882573],
         zoom:1,
         scrollWheelZoom: false,
         zoomControl: true
-      }).setView([-7.07336, 113.2487], 11);
+      }).setView([-9.107193,124.8882573], 11);
 
       new L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map_faskes);
           
