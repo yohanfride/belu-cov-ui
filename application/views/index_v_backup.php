@@ -45,7 +45,6 @@
   <!-- <link rel="stylesheet" href="<?= base_url();?>assets-front/vendor/chart/utils.css" /> -->
   
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <style>
         div.circle {
             background-color: #ff7800;
@@ -383,30 +382,7 @@
           <h2>Trend Grafik Covid-19 Kabupaten Belu</h2>
         </div>
         <div class="row">
-          <div class="col-lg-8 col-md-8 col-sm-12 ml-auto mr-auto mb-md-2" data-aos="fade-up">
-            <div class="box ">
-              <h3 class="">Pencarian Data</h3>
-              <form method="post" id="form-search" class="row">
-                <div class="col-md-5">
-                  <div class="form-group">
-                    <label for="inputPhone" class="col-form-label text-left">Tanggal Awal</label>
-                    <input type="text" class="datepicker form-control" name="start" value="<?= date( 'Y-m-d', strtotime("-13 days",strtotime(date("Y-m-d")))) ?>">
-                  </div>
-                </div>
-                <div class="col-md-5">
-                  <div class="form-group">
-                    <label for="inputPhone" class="col-form-label text-left">Tanggal Akhir</label>
-                    <input type="text" class="datepicker form-control" name="end" value="<?= date("Y-m-d") ?>">
-                  </div>
-                </div>
-                <div class="col-md-2">
-                  <button type="submit" class="btn btn-primary" style="margin-top: 35px;" id="btncari">Cari</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div> 
-        <div class="row" id="grafik">
+          
           <div class="col-lg-12 col-md-12 aos-init aos-animate mb-md-2" data-aos="fade-up" data-aos-delay="200">
             <div class="box ">
               <h3 class=".bg-gray text-blue">Trend Grafik Total </h3>
@@ -460,6 +436,9 @@
               </div>
             </div>
           </div>
+
+          
+
         </div>
       </div>
     </section><!-- End Trend Grafik Section -->
@@ -692,14 +671,9 @@
 
   <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 
   <script type="text/javascript">
-    $( function() {
-      $( ".datepicker" ).datepicker({
-        dateFormat: "yy-mm-dd"
-      });
-    });
     jQuery(function($){
       ///Global Data////
       var getNational=$.getJSON("<?= base_url()?>home/getNasional", function (data) {
@@ -831,7 +805,7 @@
         red2:"#ffa000",
         red:"#ef5350",
       }
-      <?php  
+      /*<?php  
         $hari = array(); 
         $summary_kontak_erat = array(); $summary_probable = array(); $summary_suspek = array(); $summary_konfirmasi = array();
         $kontak_erat_dipantau = array(); $kontak_erat_selesai_dipantau = array();
@@ -863,51 +837,54 @@
           $pelaku_perjalanan_selesai_isolasi[] = $dl->pelaku_perjalanan->{"selesai-isolasi"};
         }
         $data = array(
-          'hari' => $hari,
-          'summary_kontak_erat' => $summary_kontak_erat,
-          'summary_probable' => $summary_probable,
-          'summary_suspek' => $summary_suspek,
-          'summary_pelaku_perjalanan' => $summary_pelaku_perjalanan,
-          'summary_konfirmasi' => $summary_konfirmasi,
-          'kontak_erat_dipantau' => $kontak_erat_dipantau,
-          'kontak_erat_selesai_dipantau' => $kontak_erat_selesai_dipantau,
-          'probable_dipantau' => $probable_dipantau,
-          'probable_selesai_dipantau' => $probable_selesai_dipantau,
-          'probable_meninggal' => $probable_meninggal,
-          'suspek_isolasi' => $suspek_isolasi,
-          'suspek_selesai_isolasi' => $suspek_selesai_isolasi,
-          'suspek_meninggal' => $suspek_meninggal,
-          'konfirmasi_isolasi' => $konfirmasi_isolasi,
-          'konfirmasi_sembuh' => $konfirmasi_sembuh,
-          'konfirmasi_meninggal' => $konfirmasi_meninggal,
-          'konfirmasi_pengawasan' => $konfirmasi_pengawasan,
-          'pelaku_perjalanan_isolasi' => $pelaku_perjalanan_isolasi,
-          'pelaku_perjalanan_selesai_isolasi' => $pelaku_perjalanan_selesai_isolasi
+            'hari' => implode(",", $hari),
+            'summary_kontak_erat'=> implode(",", $summary_kontak_erat),
+            'summary_probable' => implode(",", $summary_probable),
+            'summary_suspek' => implode(",", $summary_suspek),
+            'summary_pelaku_perjalanan' => implode(",", $summary_pelaku_perjalanan),
+            'summary_konfirmasi' => implode(",", $summary_konfirmasi),
+            'kontak_erat_dipantau' => implode(",", $kontak_erat_dipantau),
+            'kontak_erat_selesai_dipantau' => implode(",", $kontak_erat_selesai_dipantau),
+            'probable_dipantau' => implode(",", $probable_dipantau),
+            'probable_selesai_dipantau' => implode(",", $probable_selesai_dipantau),
+            'probable_meninggal' => implode(",", $probable_meninggal),
+            'suspek_isolasi' => implode(",", $suspek_isolasi),
+            'suspek_selesai_isolasi' => implode(",", $suspek_selesai_isolasi),
+            'suspek_meninggal' => implode(",", $suspek_meninggal),
+            'konfirmasi_isolasi' => implode(",", $konfirmasi_isolasi),
+            'konfirmasi_sembuh' => implode(",", $konfirmasi_sembuh),
+            'konfirmasi_meninggal' => implode(",", $konfirmasi_meninggal),
+            'konfirmasi_pengawasan' => implode(",", $konfirmasi_pengawasan),
+            'pelaku_perjalanan_isolasi' => implode(",", $pelaku_perjalanan_isolasi),
+            'pelaku_perjalanan_selesai_isolasi' => implode(",", $pelaku_perjalanan_selesai_isolasi)
         );
       ?>
-      function tampil_grafik(data){       
+      */             
+      function graph(data){
+
+
         var kasustotal = {
             series: [{
                     name: 'Kontak Erat',
                     type: 'line',
-                    data: data.summary_kontak_erat
+                    data: [data.summary_kontak_erat]
                 },{
                     name: 'Pelaku Perjalanan',
                     type: 'line',
-                    data: data.summary_pelaku_perjalanan
+                    data: [data.summary_pelaku_perjalanan]
                 }, {
                     name: 'Probable',
                     type: 'line',
-                    data: data.summary_probable
+                    data: [data.summary_probable]
                 }, {
                     name: 'Suspek',
                     type: 'line',
-                    data: data.summary_suspek
+                    data: data.summary_suspek]
                 },
                 {
                     name: 'Terkonfirmasi Covid-19',
                     type: 'line',
-                    data: data.summary_konfirmasi
+                    data: [data.summary_konfirmasi]
                 }
             ],
             chart: {
@@ -940,7 +917,7 @@
                     stops: [0, 100, 100, 100]
                 }
             },
-            labels: data.hari,
+            labels: [data.hari],
             legend: {
                 show: true,
                 showForSingleSeries: false,
@@ -1026,15 +1003,15 @@
             series: [{
                     name: 'Kasus kontak_erat',
                     type: 'column',
-                    data: data.summary_kontak_erat
+                    data: [data.summary_kontak_erat]
                 }, {
                     name: 'Selesai Isolasi',
                     type: 'line',
-                    data: data.kontak_erat_selesai_dipantau
+                    data: [data.kontak_erat_selesai_dipantau.]
                 }, {
                     name: 'Isolasi',
                     type: 'line',
-                    data: data.kontak_erat_dipantau
+                    data: [data.kontak_erat_dipantau.]
                 }
             ],
             chart: {
@@ -1067,7 +1044,7 @@
                     stops: [0, 100, 100, 100]
                 }
             },
-            labels: data.hari,
+            labels: [data.hari.],
             legend: {
                 show: true,
                 showForSingleSeries: false,
@@ -1153,19 +1130,19 @@
             series: [{
                     name: 'Kasus probable',
                     type: 'column',
-                    data: data.summary_probable
+                    data: [data.$summary_probable.]
                 }, {
                     name: 'Selesai Dipantau',
                     type: 'line',
-                    data: data.probable_selesai_dipantau
+                    data: [data.probable_selesai_dipantau.]
                 }, {
                     name: 'Dipantau',
                     type: 'line',
-                    data: data.probable_dipantau
+                    data: [data.probable_dipantau.]
                 }, {
                     name: 'Meninggal',
                     type: 'line',
-                    data: data.probable_meninggal
+                    data: [data.probable_meninggal.]
                 }
             ],
             chart: {
@@ -1198,7 +1175,7 @@
                     stops: [0, 100, 100, 100]
                 }
             },
-            labels: data.hari,
+            labels: [data.hari],
             legend: {
                 show: true,
                 showForSingleSeries: false,
@@ -1284,19 +1261,19 @@
             series: [{
                     name: 'Kasus suspek',
                     type: 'column',
-                    data: data.summary_suspek
+                    data: [data.summary_suspek.]
                 }, {
                     name: 'Selesai Isolasi',
                     type: 'line',
-                    data: data.suspek_selesai_isolasi
+                    data: [data.suspek_selesai_isolasi]
                 }, {
                     name: 'Isolasi',
                     type: 'line',
-                    data: data.suspek_isolasi
+                    data: [data.suspek_isolasi]
                 }, {
                     name: 'Meninggal',
                     type: 'line',
-                    data: data.suspek_meninggal
+                    data: [data.suspek_meninggal]
                 }
             ],
             chart: {
@@ -1329,7 +1306,7 @@
                     stops: [0, 100, 100, 100]
                 }
             },
-            labels: data.hari,
+            labels: [data.hari],
             legend: {
                 show: true,
                 showForSingleSeries: false,
@@ -1415,23 +1392,23 @@
             series: [{
                     name: 'Positif COVID-19',
                     type: 'column',
-                    data: data.summary_konfirmasi
+                    data: [data.summary_konfirmasi]
                 }, {
                     name: 'Sembuh',
                     type: 'line',
-                    data: data.konfirmasi_sembuh
+                    data: [data.konfirmasi_sembuh]
                 }, {
                     name: 'Pengawasan',
                     type: 'line',
-                    data: data.konfirmasi_pengawasan
+                    data: [data.konfirmasi_pengawasan]
                 }, {
                     name: 'Meninggal',
                     type: 'line',
-                    data: data.probable_meninggal
+                    data: [data.probable_meninggal]
                 }, {
                     name: 'Dalam Perawatan',
                     type: 'line',
-                    data: data.konfirmasi_isolasi
+                    data: [data.konfirmasi_isolasi]
                 }
             ],
             chart: {
@@ -1464,7 +1441,7 @@
                     stops: [0, 100, 100, 100]
                 }
             },
-            labels: data.hari,
+            labels: [data.hari],
             legend: {
                 show: true,
                 showForSingleSeries: false,
@@ -1546,20 +1523,19 @@
             }
         };
 
-
         var kasus_pelaku_perjalanan = {
             series: [{
                     name: 'Kasus Pelaku Perjalanan',
                     type: 'column',
-                    data: data.summary_pelaku_perjalanan
+                    data: [<?= implode(',', $summary_pelaku_perjalanan); ?>]
                 }, {
                     name: 'Selesai Isolasi',
                     type: 'line',
-                    data: data.pelaku_perjalanan_selesai_isolasi
+                    data: [<?= implode(',', $pelaku_perjalanan_selesai_isolasi); ?>]
                 }, {
                     name: 'Isolasi',
                     type: 'line',
-                    data: data.pelaku_perjalanan_isolasi
+                    data: [<?= implode(',', $pelaku_perjalanan_isolasi); ?>]
                 }
             ],
             chart: {
@@ -1592,7 +1568,7 @@
                     stops: [0, 100, 100, 100]
                 }
             },
-            labels: data.hari,
+            labels: ['<?= implode("','", $hari); ?>'],
             legend: {
                 show: true,
                 showForSingleSeries: false,
@@ -1690,15 +1666,12 @@
         chart2.render();
 
         var chart2 = new ApexCharts(document.querySelector("#chart-kasus-pelaku_perjalanan"), kasus_pelaku_perjalanan);
-        chart2.render();
-        $("#grafik").show();
-        $("btncari").html("Cari");
-        $("btncari").removeClass("btn-warning");
-        $("btncari").addClass("btn-primary");
+        chart2.render();  
       }
-      
-      data = JSON.parse('<?php echo JSON_encode($data);?>');
-      tampil_grafik(data);
+
+      datagrafik = JSON.parse('<?php echo JSON_encode($data);?>');
+      graph(data);
+
       <?php  
         $kecamatan = array(); 
         $kec_kontak_erat = array(); $kec_probable = array(); $kec_suspek = array(); $kec_konfirmasi = array();
@@ -1872,29 +1845,7 @@
             }, 1000);
         }
       }
-      
-      $("#form-search").submit(function(e) {
-
-          e.preventDefault(); // avoid to execute the actual submit of the form.
-
-          var form = $(this);
-          var url =  "<?= base_url();?>home/get_grafik";
-          $("#grafik").hide();
-          $("btncari").html("Proses....");
-          $("btncari").removeClass("btn-primary");
-          $("btncari").addClass("btn-warning");
-          $.ajax({
-                 type: "POST",
-                 url: url,
-                 data: form.serialize(), // serializes the form's elements.
-                 success: function(data){                    
-                    tampil_grafik(data); 
-                 }
-               });
-
-          
-      });
-      //update_maps(1);
+      update_maps(1);
 
     });
   </script>
